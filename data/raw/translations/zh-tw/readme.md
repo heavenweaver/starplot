@@ -115,3 +115,87 @@ p.marker(
 '''
 p.export("Starchart_TW.png", transparent=True, padding=0.1)
 ```
+## How to Make sky.db and Update zh-TW Translations Manually
+Detailed processes step by step.<br/>
+At First, please check those csv files are ready.
+
+1.Only zh-TW Translations(iau_id,English,zh-TW)<br/>
+	/Users/user/Downloads/starplot/data/raw/translations/zh-tw<br/>
+- 	constellation_names.csv, <br/>   	
+-	dso_names.csv, <br/>   	
+-	other_terms.csv, <br/>   	
+-	star_names.csv, 
+
+2.Summarize Translations (iau_id,English,French,Farsi,zh-CN,zh-TW) <br/>
+	/Users/user/Downloads/starplot/data/raw/translations<br/>   	
+-	constellation_names.csv,<br/>
+-  	dso_names.csv, <br/>   	
+-	other_terms.csv, <br/>   	
+-	star_names.csv
+
+3.RUN python3 data/scripts/db.py<br/>
+
+4.Check sky.db file is exist.<br/>
+-  cd /Users/user/Downloads/starplot/data/build<br/>
+-  /Users/user/Downloads/starplot/data/build/sky.db
+
+5.Edit translations.py<br/>
+-	/Users/user/Downloads/starplot/data/scripts/translations.py, <br/>
+-	Add below code into translations.py, after "zh-cn" segment/block.
+  
+  ---------------------
+  ```python
+    "zh-tw": {
+        "legend": "圖例",
+        "star magnitude": "星等",
+        "star": "恆星",
+        "deep sky object": "深空天體",
+        "open cluster": "疏散星團",
+        "globular cluster": "球狀星團",
+        "nebula": "星雲",
+        "galaxy": "星系",
+        "dark nebula": "暗星雲",
+        "association of stars": "星協",
+        "double star": "雙星",
+        "emission nebula": "發射星雲",
+        "galaxy pair": "星系對",
+        "galaxy triplet": "三重星系",
+        "galaxy cluster": "星系團",
+        "group of galaxies": "星系群",
+        "hii ionized region": "hii電離氫區",
+        "nova star": "新星",
+        "planetary nebula": "行星狀星雲",
+        "reflection nebula": "反射星雲",
+        "star cluster nebula": "星團星雲",
+        "supernova remnant": "超新星遺蹟",
+        "unknown": "未知天體",
+        "planet": "行星",
+        "mercury": "水星",
+        "venus": "金星",
+        "mars": "火星",
+        "jupiter": "木星",
+        "saturn": "土星",
+        "uranus": "天王星",
+        "neptune": "海王星",
+        "pluto": "冥王星",
+        "sun": "太陽",
+        "moon": "月球",
+        "north": "北",
+        "east": "東",
+        "south": "南",
+        "west": "西",
+        "ecliptic": "黃道",
+        "celestial equator": "天赤道",
+        "n": "北",
+        "e": "東",
+        "s": "南",
+        "w": "西",
+        "milky way": "銀河",
+    },
+```
+  ---------------
+
+6.Copy sky.db and translations.py to the starplot installed directory to replace old version.<br/>
+ e.g. /Users/user/miniconda3/lib/python3.13/site-packages/starplot<br/>
+- ./data/translations.py
+- ./data/library/sky.db
