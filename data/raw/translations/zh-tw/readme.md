@@ -199,3 +199,5 @@ At First, please check those csv files are ready.
  e.g. /Users/user/miniconda3/lib/python3.13/site-packages/starplot<br/>
 - ./data/translations.py
 - ./data/library/sky.db
+## Traditional Chinese astronomy: the Twenty-Eight Mansions (Chinese: 二十八宿)
+<img width="995" height="992" alt="NorthPoleEquidistant_01" src="https://github.com/user-attachments/assets/29d9b826-9eee-46a0-bfb4-c362b5432bbc" />
